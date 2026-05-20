@@ -1,0 +1,119 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday Shuchi ❤️</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <canvas id="fireworks"></canvas>
+    <!-- LOADING SCREEN -->
+    <div id="loader">
+      <h1>For you Chorni ❤️</h1>
+    </div>
+
+    <!-- MUSIC -->
+    <audio id="bgMusic" loop>
+      <source src="music.mpeg" type="audio/mpeg" />
+    </audio>
+
+    <!-- MUSIC BUTTON -->
+    <button id="musicBtn">🎵 Play Music</button>
+
+    <!-- STARS -->
+    <div class="stars"></div>
+
+    <!-- FLOATING HEARTS -->
+    <div class="hearts"></div>
+
+    <!-- BALLOONS -->
+    <div class="balloons">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- FLOWERS -->
+    <div class="flowers">🌸 🌹 🌷 💐 🌺 🌼</div>
+
+    <!-- COUNTDOWN -->
+    <div class="countdown" id="countdown"></div>
+
+    <!-- PAGE 1 -->
+    <section class="page active" id="page1">
+      <div class="overlay"></div>
+
+      <div class="content">
+        <h1 class="typing">Happy Birthday Shuchi 🎂❤️</h1>
+
+        <p class="message">
+          You entered my life so unexpectedly, yet somehow became one of the
+          most special people to me.
+          <br /><br />
+
+          Your smile feels comforting, your voice feels peaceful, and your
+          presence makes everything brighter.
+          <br /><br />
+
+          On your birthday, I pray your life becomes filled with endless
+          happiness, beautiful memories, success, and all the love you deserve.
+          <br /><br />
+
+          Thank you for existing, Shuchi. You truly mean a lot to me. ❤️
+        </p>
+
+        <button onclick="nextPage()">Next Surprise ➜</button>
+      </div>
+    </section>
+
+    <!-- PAGE 2 -->
+    <section class="page" id="page2">
+      <div class="overlay"></div>
+
+      <div class="content">
+        <h1>Our Moments ❤️</h1>
+
+        <!-- PHOTO GALLERY -->
+        <div class="gallery">
+          <img src="us1.jpeg" />
+          <img src="us2.jpeg" />
+          <img src="us3.jpeg" />
+        </div>
+
+        <p class="message">
+          Every little moment with you feels memorable. The late-night talks,
+          the laughter, the comfort, and the closeness we built — all of it
+          became precious to me.
+          <br /><br />
+
+          Maybe we met recently, but somehow it feels like I’ve known your soul
+          much longer.
+          <br /><br />
+
+          I don’t know what destiny has written for us, but I know this: meeting
+          you was beautiful.
+          <br /><br />
+
+          Happy Birthday once again, my favorite person. ❤️✨ (arekta kotha
+          baaki shob toh choltei thakbe,i love u babu :)
+        </p>
+
+        <button onclick="prevPage()">⬅ Back</button>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>

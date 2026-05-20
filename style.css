@@ -1,0 +1,488 @@
+/* style.css */
+/* LOADER */
+
+#loader {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  animation: loaderFade 3s forwards;
+}
+
+#loader h1 {
+  color: white;
+  font-size: 3rem;
+  letter-spacing: 3px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes loaderFade {
+  0%,
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  overflow: hidden;
+  background: black;
+}
+
+/* PAGES */
+
+.page {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  transition: 1s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow-y: auto;
+
+  background-size: cover;
+  background-position: center;
+}
+#page1 {
+  background-image: url("shuchi.jpg.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#page2 {
+  background: url("usbg.jpeg") center/cover no-repeat;
+}
+
+.page.active {
+  left: 0;
+}
+
+/* OVERLAY */
+
+.overlay {
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  top: 0;
+  left: 0;
+}
+
+/* CONTENT */
+
+.content {
+  position: relative;
+  z-index: 10;
+  width: 90%;
+  max-width: 900px;
+  color: white;
+  padding: 40px 20px;
+  animation: fadeIn 2s ease;
+}
+
+h1 {
+  font-size: 4rem;
+
+  margin-bottom: 25px;
+
+  font-weight: 700;
+
+  color: #ff77b7;
+
+  text-shadow:
+    0 0 10px rgba(255, 119, 183, 0.9),
+    0 0 20px rgba(255, 119, 183, 0.8),
+    0 0 40px rgba(255, 119, 183, 0.7),
+    0 0 60px rgba(255, 119, 183, 0.5);
+
+  letter-spacing: 2px;
+}
+
+/* TYPING EFFECT */
+.typing {
+  display: inline-block;
+
+  overflow: hidden;
+
+  white-space: normal; /* IMPORTANT FIX */
+
+  border-right: 3px solid white;
+
+  max-width: 100%;
+
+  animation:
+    typing 5s steps(40, end) forwards,
+    blink 0.7s infinite;
+}
+
+/* TYPE ANIMATION */
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* CURSOR BLINK */
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+/* MESSAGE */
+
+.message {
+  font-size: 1.2rem;
+  line-height: 2;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 25px;
+  border-radius: 25px;
+  backdrop-filter: blur(8px);
+}
+
+/* BUTTON */
+
+button {
+  margin-top: 30px;
+  padding: 14px 35px;
+  border: none;
+  border-radius: 50px;
+  background: #ff4f8b;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.4s;
+  position: relative;
+  z-index: 100;
+}
+
+button:hover {
+  transform: scale(1.08);
+  background: #ff2f75;
+}
+
+/* MUSIC BUTTON */
+
+#musicBtn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+/* COUNTDOWN */
+
+.countdown {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  color: white;
+  z-index: 999;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px 20px;
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+}
+
+/* FLOWERS */
+.flowers {
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+
+  text-align: center;
+  font-size: 2rem;
+
+  z-index: 52;
+
+  pointer-events: none;
+
+  animation: flowerGlow 3s ease-in-out infinite alternate;
+}
+
+/* Soft glowing animation */
+
+@keyframes flowerGlow {
+  from {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+
+  to {
+    transform: translateY(-5px);
+    opacity: 1;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  }
+}
+
+/* BALLOONS */
+
+.balloons {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.balloons span {
+  position: absolute;
+  width: 60px;
+  height: 80px;
+  border-radius: 50%;
+  bottom: -120px;
+  animation: float 12s linear infinite;
+  opacity: 0.9;
+}
+
+/* Balloon Strings */
+
+.balloons span::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 80px;
+  background: white;
+  left: 50%;
+  top: 80px;
+  transform: translateX(-50%);
+}
+
+/* Individual Balloons */
+
+.balloons span:nth-child(1) {
+  left: 10%;
+  background: #ff4f8b;
+}
+
+.balloons span:nth-child(2) {
+  left: 25%;
+  background: #ffd166;
+  animation-duration: 9s;
+}
+
+.balloons span:nth-child(3) {
+  left: 40%;
+  background: #7bdff2;
+  animation-duration: 11s;
+}
+
+.balloons span:nth-child(4) {
+  left: 60%;
+  background: #c77dff;
+  animation-duration: 10s;
+}
+
+.balloons span:nth-child(5) {
+  left: 75%;
+  background: #80ed99;
+  animation-duration: 8s;
+}
+
+.balloons span:nth-child(6) {
+  left: 90%;
+  background: #ff8fab;
+  animation-duration: 12s;
+}
+
+/* Floating Animation */
+
+@keyframes float {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-130vh);
+  }
+}
+
+/* HEARTS */
+
+.hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 51;
+
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* HEART LAYERS */
+
+.hearts::before,
+.hearts::after {
+  content: "❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️";
+
+  position: absolute;
+
+  width: 100%;
+  left: 0;
+
+  font-size: 2rem;
+
+  opacity: 0.8;
+
+  animation: hearts 15s linear infinite;
+}
+
+/* SECOND HEART LAYER */
+
+.hearts::after {
+  animation-delay: 7s;
+}
+
+/* FLOATING HEARTS */
+
+@keyframes hearts {
+  from {
+    transform: translateY(100vh);
+  }
+
+  to {
+    transform: translateY(-120vh);
+  }
+}
+
+/* STARS */
+
+.stars {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(white 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.3;
+  animation: twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+
+/* GALLERY */
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 25px 0;
+}
+
+.gallery img {
+  width: 200px;
+  height: 260px;
+  object-fit: cover;
+
+  border-radius: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+
+  transition: 0.4s ease;
+
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.gallery img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(255, 79, 171, 0.4);
+}
+
+/* ANIMATION */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .typing {
+    animation: none;
+    white-space: normal;
+    border-right: none;
+  }
+
+  h1 {
+    font-size: 2.4rem;
+  }
+
+  .message {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .gallery img {
+    width: 150px;
+    height: 220px;
+  }
+}
+#fireworks {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
